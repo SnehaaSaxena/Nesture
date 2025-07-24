@@ -1,0 +1,104 @@
+<style>
+   .search-btn{
+     background-color:#fe424d;
+     color:#fff;
+     border-radius:25px;
+     padding:0 1rem 0 1rem;
+   }
+   .search-btn:hover{
+     background-color:#fe424d;
+     color:#fff;
+   }
+   .search-btn i{
+     display:inline;
+     margin-right:0.5rem;
+   }
+   .search-input{
+    border-radius:25px;
+    padding:0.5rem 3rem 0.5rem 3rem;
+    font-size:1rem;
+   }
+   .toggle{
+    /* margin-inline:auto; */
+    margin-left:100px;
+   }
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top" >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
+      <button class="navbar-toggler"
+       type="button" 
+       data-bs-toggle="collapse" 
+       data-bs-target="#navbarNavAltMarkup" >
+       
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="/listings">Explore</a>
+         </div>
+
+           <!-- <div class="tax-toggle toggle">
+            <div class="form-check-reverse form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+            <label class="form-check-label" for="switchCheckDefault">Display total after taxes</label>
+            </div>
+          </div> -->
+
+           <div class="tax-toggle border border-dark rounded-pill px-3 py-1">
+    <div class="form-check-reverse form-switch">
+      <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+      <label class="form-check-label" for="switchCheckDefault">Display total after taxes</label>
+    </div>
+  </div>
+
+
+
+      </div>
+
+        <!-- <div class="navbar-nav ms-auto">
+          <form class="d-flex" role="search"> -->
+            <!-- <input class="form-control me-2 search-input" type="search" placeholder="Search destinations"> -->
+            <!-- <select class="form-control me-2 search-input" type="search" name="Search destinations" id="Search destinations">
+              <option value="places">New Delhi</option>
+              <option value="places">Noida, Uttar Pradesh</option>
+              <option value="places">Jaipur,Rajasthan</option>
+              <option value="places">Nainital,Uttarakhand</option>
+              <option value="places">Manali, Himachal Pradesh</option>
+              <option value="places">Mumbai, Maharashtra</option>
+            </select> -->
+            
+            <!-- <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Search destination
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item active" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+            </div> -->
+            
+             <!-- <button class="btn search-btn" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>Search</button> -->
+          <!-- </form> 
+        </div> -->
+
+        <div class="navbar-nav ms-auto ">
+        
+          <a class="nav-link" href="/listings/new">Airbnb your home</a>
+          <!-- accessed currUser from req.locals coz we cant access req.user directly in ejs -->
+          <% if(!currUser){ %>  
+          <a class="nav-link" href="/signup"><b>Sign up</b></a>
+          <a class="nav-link" href="/login"><b>Log in</b></a>
+          <% } %>
+
+          <% if(currUser){ %> 
+          <a class="nav-link" href="/logout"><b>Log out</b></a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>
